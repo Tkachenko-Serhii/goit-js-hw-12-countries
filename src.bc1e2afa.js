@@ -3,4 +3,4 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 },{}],"Focm":[function(require,module,exports) {
 "use strict";var e=t(require("./fetchCountries"));function t(e){return e&&e.__esModule?e:{default:e}}const n={input:document.getElementById("input-js"),countries:document.getElementById("countries-js")};n.input.addEventListener("input",fetchCountries);
 },{"./fetchCountries":"SvwL"}]},{},["Focm"], null)
-//# sourceMappingURL=/goit-js-hw-12-countries/src.dab122f1.js.map
+//# sourceMappingURL=/goit-js-hw-12-countries/src.bc1e2afa.js.map
