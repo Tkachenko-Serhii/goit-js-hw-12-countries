@@ -1,9 +1,11 @@
-import fetchCountries from './fetchCountries';
-import countriesTpl from './templates';
+import debounce from 'lodash.debounce';
+import { fetchCountries } from './fetchCountries';
 
 const refs = {
   input: document.getElementById('input-js'),
   countries: document.getElementById('countries-js'),
 };
 
-refs.input.addEventListener('input', fetchCountries);
+const debounceFetchCountries = debounce(fetchCountries, 500);
+
+refs.input.addEventListener('input', debounceFetchCountries);
