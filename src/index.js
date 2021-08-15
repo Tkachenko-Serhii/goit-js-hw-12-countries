@@ -3,7 +3,6 @@ import { fetchCountries } from './fetchCountries';
 
 const refs = {
   input: document.getElementById('input-js'),
-  countries: document.getElementById('countries-js'),
 };
 
 const debounceFetchCountries = debounce(fetchCountries, 500);
