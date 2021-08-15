@@ -9,6 +9,12 @@ body {
 ul {
   margin: 0;
 }
+
+.title {
+  text-align: center;
+  color: rgb(13, 175, 175);
+}
+
 .input {
   margin-top: 40px;
   height: 30px;
@@ -16,7 +22,7 @@ ul {
   justify-content: center;
 }
 .input-field {
-  border: solid 2px blue;
+  border: solid 2px rgb(13, 175, 175);
   border-radius: 5px;
 }
 
@@ -28,6 +34,7 @@ ul {
   justify-content: center;
 }
 .country-name {
+  color: rgb(95, 10, 21);
   font-size: 48px;
 }
 .desc-list {
@@ -37,21 +44,13 @@ ul {
 }
 
 .desc-text {
+  color: rgb(139, 21, 70);
   font-weight: bold;
   font-size: 30px;
 }
 
 .desc-item:not(:last-child) {
   margin-bottom: 15px;
-}
-
-.countries-item {
-  list-style: none;
-  margin-bottom: 15px;
-}
-
-.countries-item:first-child {
-  margin-top: 20px;
 }
 
 .language-list {
@@ -64,4 +63,20 @@ ul {
 
 .language:not(:last-child) {
   margin-bottom: 10px;
+}
+
+.countries-item {
+  font-weight: bold;
+  list-style: none;
+  margin-bottom: 15px;
+}
+
+.countries-item:first-child {
+  margin-top: 20px;
+}
+
+.image {
+  border-radius: 4px;
+  box-shadow: 0px 1px 3px rgb(0 0 0 / 12%), 0px 1px 1px rgb(0 0 0 / 14%),
+    0px 2px 1px rgb(0 0 0 / 20%);
 }
