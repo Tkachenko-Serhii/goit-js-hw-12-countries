@@ -1,6 +1,6 @@
 import getRefs from './get-refs';
-import manyCountriesTpl from './templates/countries.hbs';
-import oneCountryTpl from './templates/country.hbs';
+import manyCountriesTpl from '../templates/countries.hbs';
+import oneCountryTpl from '../templates/country.hbs';
 import { alert } from '@pnotify/core';
 
 const refs = getRefs();

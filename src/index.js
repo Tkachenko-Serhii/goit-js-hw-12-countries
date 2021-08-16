@@ -1,6 +1,6 @@
 import debounce from 'lodash.debounce';
-import { fetchCountries } from './fetchCountries';
-import getRefs from './get-refs';
+import { fetchCountries } from './js/fetchCountries';
+import getRefs from './js/get-refs';
 
 const refs = getRefs();
 
