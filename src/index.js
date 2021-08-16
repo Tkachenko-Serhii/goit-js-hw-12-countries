@@ -1,9 +1,8 @@
 import debounce from 'lodash.debounce';
 import { fetchCountries } from './fetchCountries';
+import getRefs from './get-refs';
 
-const refs = {
-  input: document.getElementById('input-js'),
-};
+const refs = getRefs();
 
 const debounceFetchCountries = debounce(fetchCountries, 500);
 

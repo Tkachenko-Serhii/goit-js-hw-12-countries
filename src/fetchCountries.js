@@ -5,45 +5,32 @@ import '@pnotify/mobile/dist/PNotifyMobile.css';
 import '@pnotify/core/dist/BrightTheme.css';
 defaultModules.set(PNotifyMobile, {});
 
-import manyCountriesTpl from './templates/countries.hbs';
-import oneCountryTpl from './templates/country.hbs';
+import getRefs from './get-refs';
+import API from './api-service';
+import murkup from './renderMurkup';
 
-const refs = {
-  countries: document.getElementById('countries-js'),
-};
+const refs = getRefs();
 
-export function fetchCountries(searchQuery) {
+function fetchCountries(searchQuery) {
   const countryName = searchQuery.target.value;
   if (countryName === '') {
     refs.countries.innerHTML = '';
     return;
   } else {
-    fetch(`https://restcountries.eu/rest/v2/name/${countryName}`)
-      .then(countries => {
-        return countries.json();
-      })
+    API.fetchCountry(countryName)
       .then(countries => {
         if (countries.length > 10) {
-          alert({
-            type: 'error',
-            text: 'Too many matches found. Please enter a more specific query!',
-          });
+          murkup.ifVeryManyResults();
         }
         if (countries.length >= 2 && countries.length <= 10) {
-          manyCountriesMarkup(countries);
+          murkup.manyCountriesMarkup(countries);
         }
         if (countries.length === 1) {
-          oneCountryMarkup(countries);
+          murkup.oneCountryMarkup(countries);
         }
       })
       .catch(error => console.log(error));
   }
 }
 
-function oneCountryMarkup(countries) {
-  refs.countries.innerHTML = oneCountryTpl(countries);
-}
-
-function manyCountriesMarkup(countries) {
-  refs.countries.innerHTML = manyCountriesTpl(countries);
-}
+export { fetchCountries };
