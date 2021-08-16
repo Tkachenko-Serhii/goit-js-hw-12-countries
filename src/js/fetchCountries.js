@@ -28,6 +28,14 @@ function fetchCountries(searchQuery) {
         if (countries.length === 1) {
           murkup.oneCountryMarkup(countries);
         }
+        //Это работает не корректно, как можно это реализовать лучше. Хотел привязаться к статусу, когда появляется ошибка, но не разобрался как лучше сделать
+        // if (!API.fetchCountry.name.includes(countryName)) {
+        //   alert({
+        //     type: 'error',
+        //     text: 'The country does not exist. Please enter a more specific query!',
+        //   });
+        //   return;
+        // }
       })
       .catch(error => console.log(error));
   }
